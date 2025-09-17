@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PilateSpot — Odkryj moc Pilatesu w Szczecinie</title>
+  <meta name="description" content="PilateSpot — minimalistyczne studio pilates w Szczecinie. Kameralne grupy, treningi personalne i przyjazna atmosfera.">
+  <!-- Edytuj poniższą wartość, aby podmienić link do rezerwacji w Fitssey -->
+  <meta name="pilatespot:booking-url" content="https://app.fitssey.com/YOUR_STUDIO_SLUG">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="PilateSpot — strona główna">
+        <span class="brand-mark" aria-hidden="true">●</span>
+        <span class="brand-name">PilateSpot</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Główne">
+        <a href="#oferta">Zajęcia</a>
+        <a href="#rezerwacja">Umów zajęcia</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <a class="btn btn-primary header-cta" href="#" data-booking>Umów zajęcia</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- HERO -->
+    <section class="section hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-media">
+          <!-- Podmień obraz: wgraj zdjęcie do assets/images/hero.jpg -->
+          <img src="assets/images/hero.jpg" alt="Pilates — spokojna praktyka" loading="eager">
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Studio w Szczecinie</p>
+          <h1 id="hero-title">Odkryj moc Pilatesu w Szczecinie!</h1>
+          <p class="lede">Kameralne grupy, treningi personalne i uważny ruch w spokojnej, eleganckiej przestrzeni.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#" data-booking>Umów zajęcia</a>
+            <a class="btn btn-ghost" href="#oferta">Zobacz ofertę</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFERTA ZAJĘĆ -->
+    <section id="oferta" class="section classes" aria-labelledby="classes-title">
+      <div class="container">
+        <h2 id="classes-title">Zajęcia dla każdego poziomu</h2>
+        <p class="section-intro">Wybierz formę, która najlepiej odpowiada Twoim potrzebom.</p>
+
+        <div class="cards">
+          <article class="card">
+            <img src="assets/images/class-mat.jpg" alt="Mat Pilates" loading="lazy">
+            <div class="card-body">
+              <h3>Mat Pilates</h3>
+              <p>Ćwiczenia na macie skoncentrowane na wzmocnieniu centrum i poprawie postawy.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/images/class-duet.jpg" alt="Trening w duecie" loading="lazy">
+            <div class="card-body">
+              <h3>Duet / Małe grupy</h3>
+              <p>Bezpieczny ruch pod okiem instruktora — więcej uwagi i motywacji.</p>
+            </div>
+          </article>
+          <article class="card">
+            <img src="assets/images/class-11.jpg" alt="Trening personalny 1:1" loading="lazy">
+            <div class="card-body">
+              <h3>Trening 1:1</h3>
+              <p>Spersonalizowany plan zajęć dostosowany do Twoich celów i możliwości.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / REZERWACJA -->
+    <section id="rezerwacja" class="section booking" aria-labelledby="booking-title">
+      <div class="container booking-inner">
+        <div class="booking-copy">
+          <h2 id="booking-title">Umów zajęcia</h2>
+          <p>Rezerwacje prowadzimy w aplikacji Fitssey. Kliknij poniżej, aby przejść do terminarza i wybrać dogodny termin.</p>
+        </div>
+        <a class="btn btn-primary btn-large" href="#" data-booking>Przejdź do rezerwacji</a>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt" class="section contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <h2 id="contact-title">Kontakt</h2>
+          <p>Masz pytania? Napisz do nas — chętnie pomożemy dobrać odpowiednie zajęcia.</p>
+          <ul class="contact-list">
+            <li><a href="tel:+48539979799">+48 539 979 799</a></li>
+            <li><a href="mailto:pilatespotstudio@gmail.com">pilatespotstudio@gmail.com</a></li>
+            <li>Szczecin</li>
+          </ul>
+        </div>
+
+        <form class="contact-form" aria-label="Formularz kontaktowy" novalidate>
+          <label>
+            <span>Imię</span>
+            <input type="text" name="name" placeholder="Twoje imię" required>
+          </label>
+          <label>
+            <span>E-mail</span>
+            <input type="email" name="email" placeholder="adres@email.com" required>
+          </label>
+          <label class="full">
+            <span>Wiadomość</span>
+            <textarea name="message" rows="6" placeholder="Napisz kilka słów..." required></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Wyślij</button>
+          <p class="form-note" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> PilateSpot</span>
+      <nav aria-label="Stopka">
+        <a href="#oferta">Zajęcia</a>
+        <a href="#rezerwacja">Umów zajęcia</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
