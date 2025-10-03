@@ -1,6 +1,5 @@
 // Global function for scroll to top button
 function scrollToTop() {
-  console.log('Scroll to top clicked');
   window.scrollTo({
     top: 0,
     behavior: 'smooth'
@@ -171,28 +170,21 @@ document.addEventListener('DOMContentLoaded',()=>{
   // Show/hide scroll-to-top button and header
   const scrollBtn = document.querySelector('.scroll-top-btn');
   const header = document.querySelector('.site-header');
-  let lastScrollY = window.scrollY;
-  let ticking = false;
+  let lastScrollY = 0;
   
-  console.log('=== SCROLL TEST ===');
-  console.log('Button:', scrollBtn);
-  console.log('Header:', header);
-  console.log('Initial scroll:', lastScrollY);
-  
-  const toggleScrollElements = ()=>{
-    const currentScrollY = window.scrollY;
-    const scrollThreshold = 100; // Pikseli od góry strony
+  const handleScroll = () => {
+    const currentScrollY = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset || 0;
+    const scrollThreshold = 100;
     
-    // Ukryj menu gdy przewijamy w dół po przekroczeniu progu
     if(header){
       if(currentScrollY > scrollThreshold && currentScrollY > lastScrollY){
-        // Przewijanie w dół - ukryj menu, pokaż przycisk
+        // Scrolling down - hide header
         header.classList.add('hidden');
         if(scrollBtn){
           scrollBtn.classList.add('is-visible');
         }
-      } else if(currentScrollY <= scrollThreshold || currentScrollY < lastScrollY){
-        // Przewijanie w górę lub jesteśmy blisko góry - pokaż menu, ukryj przycisk
+      } else if(currentScrollY < lastScrollY || currentScrollY <= scrollThreshold){
+        // Scrolling up or near top - show header
         header.classList.remove('hidden');
         if(scrollBtn){
           scrollBtn.classList.remove('is-visible');
@@ -201,22 +193,15 @@ document.addEventListener('DOMContentLoaded',()=>{
     }
     
     lastScrollY = currentScrollY;
-    ticking = false;
-  };
-  
-  // Throttle scroll events for better performance
-  const handleScroll = () => {
-    if (!ticking) {
-      requestAnimationFrame(toggleScrollElements);
-      ticking = true;
-    }
   };
   
   // Initialize scroll button functionality
   if(scrollBtn){
-    // Add click event listener
     scrollBtn.addEventListener('click', function(e) {
       e.preventDefault();
+      // Try multiple scroll methods to ensure it works
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -224,15 +209,15 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
   }
   
-  // Initialize state and add scroll listener
-  toggleScrollElements();
-  
-  // Simple scroll test
-  window.addEventListener('scroll', function() {
-    console.log('SCROLL EVENT FIRED! Y:', window.scrollY);
-  });
-  
+  // Add scroll listeners
   window.addEventListener('scroll', handleScroll, {passive: true});
+  document.addEventListener('scroll', handleScroll, {passive: true});
+  document.body.addEventListener('scroll', handleScroll, {passive: true});
+  
+  // Initial call with delay to ensure page is fully loaded
+  setTimeout(() => {
+    handleScroll();
+  }, 100);
 
   // Typografia: zamiana spacji po jednoliterowych słowach na twarde spacje (sierotki)
   const fixWidows = (root)=>{
