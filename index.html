@@ -5,8 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PilateSpot — Odkryj moc Pilatesu w Szczecinie</title>
   <meta name="description" content="PilateSpot — minimalistyczne studio pilates w Szczecinie. Kameralne grupy, treningi personalne i przyjazna atmosfera.">
+  <meta name="format-detection" content="telephone=no">
   <!-- Edytuj poniższą wartość, aby podmienić link do rezerwacji w Fitssey -->
-  <meta name="pilatespot:booking-url" content="https://app.fitssey.com/YOUR_STUDIO_SLUG">
+  <meta name="pilatespot:booking-url" content="https://app.fitssey.com/PilateSpot">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthClub",
+    "name": "PilateSpot",
+    "description": "Minimalistyczne studio pilates w Szczecinie. Kameralne grupy i treningi personalne.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "al. Wojska Polskiego 187/7",
+      "addressLocality": "Szczecin",
+      "postalCode": "",
+      "addressCountry": "PL"
+    },
+    "telephone": "+48 539 979 799",
+    "email": "pilatespotstudio@gmail.com",
+    "url": "",
+    "areaServed": "Szczecin",
+    "openingHoursSpecification": []
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -15,17 +36,37 @@
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="brand" href="#home" aria-label="PilateSpot — strona główna">
-        <span class="brand-mark" aria-hidden="true">●</span>
-        <span class="brand-name">PilateSpot</span>
+        <img class="brand-logo" src="assets/images/logo.png" alt="PilateSpot">
       </a>
 
       <nav class="main-nav" aria-label="Główne">
+        <a href="#o-mnie">O mnie</a>
         <a href="#oferta">Zajęcia</a>
-        <a href="#rezerwacja">Umów zajęcia</a>
+        <a href="#studio">Studio</a>
+        <a href="#cennik">Cennik</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
 
-      <a class="btn btn-primary header-cta" href="#" data-booking>Umów zajęcia</a>
+      <a class="btn btn-primary header-cta" href="https://app.fitssey.com/PilateSpot" data-booking>Umów zajęcia</a>
+      
+      <!-- Mobile menu button -->
+      <button class="mobile-menu-toggle" aria-label="Otwórz menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+    
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu-overlay">
+      <nav class="mobile-nav" aria-label="Menu mobilne">
+        <a href="#o-mnie">O mnie</a>
+        <a href="#oferta">Zajęcia</a>
+        <a href="#studio">Studio</a>
+        <a href="#cennik">Cennik</a>
+        <a href="#kontakt">Kontakt</a>
+        <a class="btn btn-primary mobile-cta" href="https://app.fitssey.com/PilateSpot" data-booking>Umów zajęcia</a>
+      </nav>
     </div>
   </header>
 
@@ -39,12 +80,33 @@
         </div>
         <div class="hero-copy">
           <p class="eyebrow">Studio w Szczecinie</p>
-          <h1 id="hero-title">Odkryj moc Pilatesu w Szczecinie!</h1>
-          <p class="lede">Kameralne grupy, treningi personalne i uważny ruch w spokojnej, eleganckiej przestrzeni.</p>
+          <h1 id="hero-title">Klasyczny pilates<br> w Szczecinie</h1>
+          <h2 class="hero-subtitle">Kameralne grupy<br> i treningi personalne</h2>
+          <p class="lede">W butikowym studio pilates czekają na Ciebie kameralne grupy do 4 osób, treningi personalne 1:1 i sesje w duecie. Pracujemy<br> w duchu oryginalnej metody Josepha Pilatesa – każdy ruch, każdy oddech i każde ćwiczenie przygotowuje Cię do kolejnego. To pilates, który uczy świadomego ruchu, wzmacnia ciało i przynosi prawdziwe efekty.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#" data-booking>Umów zajęcia</a>
+            <a class="btn btn-primary" href="https://app.fitssey.com/PilateSpot" data-booking>Umów zajęcia</a>
             <a class="btn btn-ghost" href="#oferta">Zobacz ofertę</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O MNIE -->
+    <section id="o-mnie" class="section about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <p class="eyebrow">O mnie</p>
+          <h2 id="about-title">Ewa – założycielka<br> i instruktorka klasycznego pilatesu w Szczecinie</h2>
+          <p class="lede">PilateSpot to ja – Ewa. Pomysł na butikowe studio pilates w Szczecinie kiełkował we mnie od dawna i rozkwitł, kiedy zdałam sobie sprawę, że każdy nauczyciel potrzebuje własnej praktyki. Brakowało mi miejsca, w którym mogę rozwijać się i ćwiczyć w duchu oryginalnej metody Josepha Pilatesa. Tak powstało kameralne studio na zielonym Pogodnie – przestrzeń stworzona z myślą o świadomym ruchu i uważnej pracy z ciałem.</p>
+          <p>Na swojej pilatesowej drodze spotkałam wielu nauczycieli i wiem, że nauka nigdy się nie kończy. Dziś dzielę się wiedzą i doświadczeniem, które zdobyłam, ucząc klasycznego pilatesu w małych grupach, w duecie oraz w treningach personalnych 1:1.</p>
+          <p>Jako certyfikowana instruktorka stawiam na indywidualne podejście<br> i bezpieczeństwo. Każdy trening dopasowuję do Twoich potrzeb – tak, aby pilates wspierał Twoją siłę, elastyczność i dobre samopoczucie.</p>
+          <div class="about-actions">
+            <a class="btn btn-primary" href="#oferta">Zobacz ofertę</a>
+            <a class="btn btn-ghost" href="https://app.fitssey.com/PilateSpot" data-booking>Umów zajęcia</a>
+          </div>
+        </div>
+        <div class="about-media">
+          <img src="assets/images/omnie.jpg" alt="Ewa — instruktorka i założycielka PilateSpot" loading="lazy">
         </div>
       </div>
     </section>
@@ -54,41 +116,180 @@
       <div class="container">
         <h2 id="classes-title">Zajęcia dla każdego poziomu</h2>
         <p class="section-intro">Wybierz formę, która najlepiej odpowiada Twoim potrzebom.</p>
-
         <div class="cards">
           <article class="card">
-            <img src="assets/images/class-mat.jpg" alt="Mat Pilates" loading="lazy">
+            <img src="assets/images/class-mat.jpg" alt="Sesje na macie (Matwork)" loading="lazy">
             <div class="card-body">
-              <h3>Mat Pilates</h3>
-              <p>Ćwiczenia na macie skoncentrowane na wzmocnieniu centrum i poprawie postawy.</p>
+              <h2>Sesje na macie (Matwork)</h2>
+              <p>Zajęcia klasycznego pilatesu na macie (matwork) koncentrują się na wzmacnianiu mięśni głębokich centrum, poprawie postawy i pracy z oddechem. Grupy bardzo kameralne – maksymalnie 4 osoby, co pozwala instruktorowi zadbać o technikę każdego uczestnika.</p>
+              <h3>Mata & wieża (Tower)</h3>
+              <p>Połączenie matwork z pracą na wieży (tower) dla większego urozmaicenia, oporu, rozciągania i stabilizacji.</p>
+              <h3>Mata & mały sprzęt (Small Equipment)</h3>
+              <p>Magic circle, gumy, piłki czy roller zwiększają wyzwanie, angażują więcej mięśni i urozmaicają trening.</p>
             </div>
           </article>
           <article class="card">
-            <img src="assets/images/class-duet.jpg" alt="Trening w duecie" loading="lazy">
+            <img src="assets/images/class-duet.jpg" alt="Sesje personalne i duo – sprzęt pilatesowy" loading="lazy">
             <div class="card-body">
-              <h3>Duet / Małe grupy</h3>
-              <p>Bezpieczny ruch pod okiem instruktora — więcej uwagi i motywacji.</p>
+              <h2>Sesje personalne i duo – sprzęt pilatesowy</h2>
+              <p>Sesje personalne (1:1) oraz zajęcia duo (2 osoby) to najlepsza forma do poznania&nbsp;pełnego&nbsp;potencjału klasycznego pilatesu na sprzętach. W ramach tych sesji pracujemy na:</p>
+              <h3>Reformer</h3>
+              <p>Dynamiczne ćwiczenia z regulowanym oporem, angażujące całe ciało.</p>
+              <h3>Cadillac (Trapeze Table)</h3>
+              <p>Praca nad stabilnością, elastycznością<br> i odciążeniem.</p>
+              <h3>Beczka (Barrel / Ladder Barrel) oraz krzesło (Wunda Chair / Pilates Chair)</h3>
+              <p>Mobilność, równowaga i wzmocnienie mięśni głębokich.</p>
+              <p>Każda sesja jest dostosowana do Twoich celów, stanu ciała i poziomu zaawansowania.</p>
             </div>
           </article>
           <article class="card">
-            <img src="assets/images/class-11.jpg" alt="Trening personalny 1:1" loading="lazy">
+            <img src="assets/images/class-11.jpg" alt="Zajęcia grupowe na sprzęcie" loading="lazy">
             <div class="card-body">
-              <h3>Trening 1:1</h3>
-              <p>Spersonalizowany plan zajęć dostosowany do Twoich celów i możliwości.</p>
+              <h2>Zajęcia grupowe na sprzęcie</h2>
+              <h3>Mata & wieża (Tower)</h3>
+              <p>Grupy do 4 osób.</p>
+              <h3>Mata & mały sprzęt</h3>
+              <p>Grupy do 4 osób.</p>
+              <h3>Reformer Start</h3>
+              <p>Grupa maksymalnie do 3 osób, idealna dla osób, które chcą zacząć ćwiczyć na reformerze.</p>
+              <p>Dzięki małym grupom instruktor może skupić się na technice, zapewnić bezpieczeństwo i indywidualne wskazówki.</p>
             </div>
           </article>
         </div>
+        
       </div>
     </section>
 
-    <!-- CTA / REZERWACJA -->
-    <section id="rezerwacja" class="section booking" aria-labelledby="booking-title">
-      <div class="container booking-inner">
-        <div class="booking-copy">
-          <h2 id="booking-title">Umów zajęcia</h2>
-          <p>Rezerwacje prowadzimy w aplikacji Fitssey. Kliknij poniżej, aby przejść do terminarza i wybrać dogodny termin.</p>
+    <!-- CTA / REZERWACJA (full-bleed banner 16:9) -->
+    <section id="rezerwacja" class="section booking full-bleed" aria-labelledby="booking-title">
+      <div class="banner-media">
+        <img src="assets/images/baner.jpg" alt="Umów zajęcia — kameralne treningi" loading="lazy">
+      </div>
+      <div class="banner-overlay">
+        <h2 id="booking-title">Umów zajęcia</h2>
+        <p>Rezerwacje prowadzimy w Fitssey. Wybierz dogodny termin i dołącz do zajęć.</p>
+        <a class="btn btn-primary btn-large" href="https://app.fitssey.com/PilateSpot" data-booking>Przejdź do rezerwacji</a>
+      </div>
+    </section>
+
+    <!-- STUDIO -->
+    <section id="studio" class="section" aria-labelledby="studio-title">
+      <div class="container">
+        <h2 id="studio-title">Studio</h2>
+        <p class="section-intro"><span class="badge">Klasyczny pilates</span> — jedyne takie studio w Szczecinie. Minimalizm, spokój i uważny ruch w kameralnej atmosferze.</p>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <h3>Czym jest klasyczny pilates?</h3>
+            <p>Ćwiczymy w oparciu o oryginalną metodę Josepha Pilatesa – precyzja, oddech i&nbsp;płynność ruchu. Klasyczny pilates wzmacnia centrum, poprawia postawę i&nbsp;elastyczność.</p>
+          </div>
+          <div class="feature">
+            <h3>Kameralne zajęcia</h3>
+            <p>W studio pilates w Szczecinie pracujemy w małych grupach (do 4 osób) oraz prowadzimy treningi personalne 1:1 i duo. Dzięki temu otrzymasz indywidualne podejście, bezpieczeństwo i uważne wsparcie instruktora.</p>
+          </div>
+          <div class="feature">
+            <h3>Sprzęt i akcesoria</h3>
+            <p>W PilateSpot korzystamy z profesjonalnego sprzętu pilatesowego: Reformer, Cadillac, Wunda Chair (krzesełko), Spine Corrector, Ladder Barrel (beczka) oraz z akcesoriów – piłek, rollerów, foot correctora. Dzięki temu możesz doświadczyć pełnej metody pilates i&nbsp;zrozumieć system stworzony przez Josepha Pilatesa.</p>
+          </div>
         </div>
-        <a class="btn btn-primary btn-large" href="#" data-booking>Przejdź do rezerwacji</a>
+
+        <div class="gallery" style="margin-top:16px">
+          <img src="assets/images/01245e06-1b6e-4981-8f41-41c3be8650b5.jpg" alt="Wnętrze studia — sala do ćwiczeń" loading="lazy">
+          <img src="assets/images/hero.jpg" alt="Przestrzeń studia — minimalistyczny wystrój" loading="lazy">
+          <img src="assets/images/class-mat.jpg" alt="Zajęcia na macie w kameralnej atmosferze" loading="lazy">
+          <img src="assets/images/class-11.jpg" alt="Trening personalny — stanowisko 1:1" loading="lazy">
+        </div>
+
+        <!-- Full-bleed banner 16:9 with overlay -->
+        <section class="banner full-bleed" aria-label="Klasyczny pilates w minimalistycznej przestrzeni">
+          <div class="banner-media">
+            <img src="assets/images/baner2.jpg" alt="Pilates — spokojna praktyka w nowoczesnej przestrzeni" loading="lazy">
+          </div>
+          <div class="banner-overlay">
+            <h3>Klasyczny pilates w kameralnym studio</h3>
+            <p>Minimalistyczna przestrzeń, profesjonalny sprzęt BonPilates i uważny ruch.</p>
+            <a class="btn btn-primary" href="https://app.fitssey.com/PilateSpot" data-booking>Umów zajęcia</a>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- CENNIK -->
+    <section id="cennik" class="section pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <h2 id="pricing-title">Cennik</h2>
+        <p class="section-intro">Prosty i przejrzysty — wybierz opcję dopasowaną do Ciebie.</p>
+
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <header class="pricing-header">
+              <h3>Sesja indywidualna</h3>
+            </header>
+            <dl class="pricing-list">
+              <div class="pricing-row">
+                <dt>1 sesja</dt>
+                <dd><strong class="price">220 zł</strong></dd>
+              </div>
+              <div class="pricing-row">
+                <dt>4 sesje</dt>
+                <dd><strong class="price">800 zł</strong></dd>
+              </div>
+            </dl>
+            <p class="pricing-info">Czas trwania zajęć: 55 min • Ważny przez 30 dni od daty zakupu.</p>
+            <div class="pricing-actions">
+              <a class="btn btn-primary" href="https://app.fitssey.com/PilateSpot" data-booking>Umów zajęcia</a>
+              <a class="btn btn-ghost" href="#kontakt">Pytania?</a>
+            </div>
+          </article>
+
+          <article class="pricing-card highlight">
+            <header class="pricing-header">
+              <h3>Sesja duo</h3>
+              <span class="badge">Polecane</span>
+            </header>
+            <dl class="pricing-list">
+              <div class="pricing-row">
+                <dt>1 sesja</dt>
+                <dd><strong class="price">350 zł</strong></dd>
+              </div>
+              <div class="pricing-row">
+                <dt>4 sesje</dt>
+                <dd><strong class="price">1250 zł</strong></dd>
+              </div>
+            </dl>
+            <p class="pricing-info">Czas trwania zajęć: 55 min • Ważny przez 30 dni od daty zakupu.</p>
+            <div class="pricing-actions">
+              <a class="btn btn-primary" href="https://app.fitssey.com/PilateSpot" data-booking>Umów zajęcia</a>
+              <a class="btn btn-ghost" href="#kontakt">Pytania?</a>
+            </div>
+          </article>
+
+          <article class="pricing-card">
+            <header class="pricing-header">
+              <h3>Trening grupowy</h3>
+            </header>
+            <dl class="pricing-list">
+              <div class="pricing-row">
+                <dt>1 sesja</dt>
+                <dd><strong class="price">100 zł</strong></dd>
+              </div>
+              <div class="pricing-row">
+                <dt>4 sesje</dt>
+                <dd><strong class="price">350 zł</strong></dd>
+              </div>
+              <div class="pricing-row">
+                <dt>8 sesji</dt>
+                <dd><strong class="price">630 zł</strong></dd>
+              </div>
+            </dl>
+            <p class="pricing-info">Czas trwania zajęć: 55 min • Ważny przez 30 dni od daty zakupu.</p>
+            <div class="pricing-actions">
+              <a class="btn btn-primary" href="https://app.fitssey.com/PilateSpot" data-booking>Umów zajęcia</a>
+              <a class="btn btn-ghost" href="#kontakt">Pytania?</a>
+            </div>
+          </article>
+        </div>
+
       </div>
     </section>
 
@@ -97,12 +298,34 @@
       <div class="container contact-grid">
         <div class="contact-copy">
           <h2 id="contact-title">Kontakt</h2>
-          <p>Masz pytania? Napisz do nas — chętnie pomożemy dobrać odpowiednie zajęcia.</p>
+          <p>Masz pytania? Napisz do mnie — chętnie pomogę dobrać odpowiednie zajęcia.</p>
           <ul class="contact-list">
             <li><a href="tel:+48539979799">+48 539 979 799</a></li>
             <li><a href="mailto:pilatespotstudio@gmail.com">pilatespotstudio@gmail.com</a></li>
-            <li>Szczecin</li>
           </ul>
+          <h3 style="margin-top:16px">Adres</h3>
+          <p class="section-intro">al. Wojska Polskiego 187/7, Szczecin</p>
+          
+          <div class="directions">
+            <div class="direction-item">
+              <div class="direction-icon">🚗</div>
+              <div class="direction-content">
+                <h4>Dojazd autem:</h4>
+                <p>Wjazd od ul. Prusa, następnie w prawo w ul. Kochanowskiego i prosto do końca. Wejście znajduje się w trzecim budynku od strony ul. Kochanowskiego, II piętro.</p>
+              </div>
+            </div>
+            
+            <div class="direction-item">
+              <div class="direction-icon">🚶‍♀️</div>
+              <div class="direction-content">
+                <h4>Dojście pieszo:</h4>
+                <p>Wejście dostępne także bezpośrednio od al. Wojska Polskiego. Studio znajduje się w pierwszym budynku od strony al. Wojska Polskiego na II piętrze.</p>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:12px">
+            <iframe title="Mapa dojazdu" src="https://www.google.com/maps?q=al.%20Wojska%20Polskiego%20187/7%20Szczecin&output=embed" width="100%" height="280" style="border:0;border-radius:12px" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
 
         <form class="contact-form" aria-label="Formularz kontaktowy" novalidate>
@@ -127,14 +350,36 @@
 
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <span>© <span id="year"></span> PilateSpot</span>
+      <a class="footer-brand" href="#home" aria-label="PilateSpot — strona główna">
+        <img class="footer-logo" src="assets/images/logo.png" alt="PilateSpot">
+      </a>
+      <span>© <span id="year"></span> PilateSpot • al. Wojska Polskiego 187/7, Szczecin</span>
       <nav aria-label="Stopka">
+        <a href="#o-mnie">O mnie</a>
         <a href="#oferta">Zajęcia</a>
-        <a href="#rezerwacja">Umów zajęcia</a>
+        <a href="#studio">Studio</a>
+        <a href="#cennik">Cennik</a>
         <a href="#kontakt">Kontakt</a>
+        <a href="https://www.instagram.com/pilatespot_szczecin?igsh=Zjdhamhnb2w2MXNl" target="_blank" rel="noopener noreferrer" aria-label="Instagram PilateSpot">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="currentColor"/>
+          </svg>
+        </a>
       </nav>
     </div>
   </footer>
+
+  <div id="cookie-consent" class="cookie-bar" role="region" aria-label="Informacja o plikach cookies">
+    <div class="container cookie-inner">
+      <p>Używamy plików cookies, aby poprawić działanie serwisu. Kontynuując korzystanie, zgadzasz się na ich użycie.</p>
+      <button class="btn btn-primary" id="cookie-accept" type="button">Akceptuj</button>
+    </div>
+  </div>
+
+  <!-- Scroll to top button -->
+  <button class="scroll-top-btn" aria-label="Wróć na górę strony" type="button" onclick="scrollToTop()">
+    ▲
+  </button>
 
   <script src="script.js"></script>
 </body>
