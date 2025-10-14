@@ -40,14 +40,28 @@ document.addEventListener('DOMContentLoaded',()=>{
   // Mobile menu toggle
   const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
   const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+  const mobileCloseBtn = document.querySelector('.mobile-close-btn');
   
   if(mobileMenuToggle && mobileMenuOverlay){
-    mobileMenuToggle.addEventListener('click', ()=>{
+    mobileMenuToggle.addEventListener('click', (e)=>{
+      e.preventDefault();
+      e.stopPropagation();
       const isOpen = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
       mobileMenuToggle.setAttribute('aria-expanded', !isOpen);
       mobileMenuOverlay.classList.toggle('is-open');
       document.body.style.overflow = !isOpen ? 'hidden' : '';
     });
+    
+    // Close menu when clicking close button
+    if(mobileCloseBtn){
+      mobileCloseBtn.addEventListener('click', (e)=>{
+        e.preventDefault();
+        e.stopPropagation();
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenuOverlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    }
     
     // Close menu when clicking on links
     const mobileNavLinks = mobileMenuOverlay.querySelectorAll('a');
@@ -244,6 +258,47 @@ document.addEventListener('DOMContentLoaded',()=>{
   };
 
   fixWidows(document);
+
+  // Thoughts cards scroll indicators
+  const thoughtsCards = document.getElementById('thoughts-cards');
+  const indicators = document.querySelectorAll('.indicator');
+  
+  if(thoughtsCards && indicators.length > 0){
+    let currentIndex = 0;
+    
+    // Update indicators based on scroll position
+    const updateIndicators = () => {
+      const scrollLeft = thoughtsCards.scrollLeft;
+      const cardWidth = thoughtsCards.querySelector('.thought-card').offsetWidth + 16; // width + margin
+      const newIndex = Math.round(scrollLeft / cardWidth);
+      
+      if(newIndex !== currentIndex && newIndex >= 0 && newIndex < indicators.length){
+        indicators.forEach((indicator, index) => {
+          indicator.classList.toggle('active', index === newIndex);
+        });
+        currentIndex = newIndex;
+      }
+    };
+    
+    // Listen for scroll events
+    thoughtsCards.addEventListener('scroll', updateIndicators);
+    
+    // Click indicators to scroll to specific card
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        const cardWidth = thoughtsCards.querySelector('.thought-card').offsetWidth + 16;
+        thoughtsCards.scrollTo({
+          left: index * cardWidth,
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Initialize first indicator as active
+    if(indicators.length > 0){
+      indicators[0].classList.add('active');
+    }
+  }
 });
 
 

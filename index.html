@@ -29,10 +29,10 @@
   }
   </script>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="font-default">
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a class="brand" href="#home" aria-label="PilateSpot — strona główna">
@@ -56,19 +56,24 @@
         <span class="hamburger-line"></span>
       </button>
     </div>
-    
-    <!-- Mobile menu overlay -->
-    <div class="mobile-menu-overlay">
-      <nav class="mobile-nav" aria-label="Menu mobilne">
-        <a href="#o-mnie">O mnie</a>
-        <a href="#oferta">Zajęcia</a>
-        <a href="#studio">Studio</a>
-        <a href="#cennik">Cennik</a>
-        <a href="#kontakt">Kontakt</a>
-        <a class="btn btn-primary mobile-cta" href="https://app.fitssey.com/PilateSpot" data-booking>Umów zajęcia</a>
-      </nav>
-    </div>
   </header>
+
+  <!-- Mobile menu overlay (moved outside header to avoid transform clipping) -->
+  <div class="mobile-menu-overlay">
+    <button class="mobile-close-btn" aria-label="Zamknij menu" type="button">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <nav class="mobile-nav" aria-label="Menu mobilne">
+      <a href="#o-mnie">O mnie</a>
+      <a href="#oferta">Zajęcia</a>
+      <a href="#studio">Studio</a>
+      <a href="#cennik">Cennik</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="btn btn-primary mobile-cta" href="https://app.fitssey.com/PilateSpot" data-booking>Umów zajęcia</a>
+    </nav>
+  </div>
 
   <main id="home">
     <!-- HERO -->
@@ -82,7 +87,7 @@
           <p class="eyebrow">Studio w Szczecinie</p>
           <h1 id="hero-title">Klasyczny pilates<br> w Szczecinie</h1>
           <h2 class="hero-subtitle">Kameralne grupy<br> i treningi personalne</h2>
-          <p class="lede">W butikowym studio pilates czekają na Ciebie kameralne grupy do 4 osób, treningi personalne 1:1 i sesje w duecie. Pracujemy<br> w duchu oryginalnej metody Josepha Pilatesa – każdy ruch, każdy oddech i każde ćwiczenie przygotowuje Cię do kolejnego. To pilates, który uczy świadomego ruchu, wzmacnia ciało i przynosi prawdziwe efekty.</p>
+          <p class="lede">W butikowym studio pilates czekają na Ciebie kameralne grupy 3-4 osobowe, treningi personalne 1:1 i sesje we własnym duecie. Pracujemy w duchu oryginalnej metody Josepha Pilatesa – każdy ruch, każdy oddech i każde ćwiczenie przygotowuje Cię do kolejnego. To pilates, który uczy świadomego ruchu, wzmacnia ciało i przynosi prawdziwe efekty.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://app.fitssey.com/PilateSpot" data-booking>Umów zajęcia</a>
             <a class="btn btn-ghost" href="#oferta">Zobacz ofertę</a>
@@ -96,10 +101,10 @@
       <div class="container about-grid">
         <div class="about-copy">
           <p class="eyebrow">O mnie</p>
-          <h2 id="about-title">Ewa – założycielka<br> i instruktorka klasycznego pilatesu w Szczecinie</h2>
-          <p class="lede">PilateSpot to ja – Ewa. Pomysł na butikowe studio pilates w Szczecinie kiełkował we mnie od dawna i rozkwitł, kiedy zdałam sobie sprawę, że każdy nauczyciel potrzebuje własnej praktyki. Brakowało mi miejsca, w którym mogę rozwijać się i ćwiczyć w duchu oryginalnej metody Josepha Pilatesa. Tak powstało kameralne studio na zielonym Pogodnie – przestrzeń stworzona z myślą o świadomym ruchu i uważnej pracy z ciałem.</p>
-          <p>Na swojej pilatesowej drodze spotkałam wielu nauczycieli i wiem, że nauka nigdy się nie kończy. Dziś dzielę się wiedzą i doświadczeniem, które zdobyłam, ucząc klasycznego pilatesu w małych grupach, w duecie oraz w treningach personalnych 1:1.</p>
-          <p>Jako certyfikowana instruktorka stawiam na indywidualne podejście<br> i bezpieczeństwo. Każdy trening dopasowuję do Twoich potrzeb – tak, aby pilates wspierał Twoją siłę, elastyczność i dobre samopoczucie.</p>
+          <h2 id="about-title">Ewa – założycielka<br> i instruktorka pilatesu w Szczecinie</h2>
+          <p class="lede">PilateSpot to ja – Ewa. Pomysł na butikowe studio pilates w Szczecinie dojrzewał w mojej głowie już od dawna. Rozkwitł w momencie, gdy zdałam sobie sprawę, że mądry nauczyciel nigdy nie przestaje być uczniem.</p>
+          <p>Wielu nauczycieli pomija lub zaniedbuje własną praktykę, przez co przestaje się rozwijać. Te obserwacje przybliżyły mnie do stworzenia miejsca, w którym sama mogę regularnie praktykować — studio wyposażone jest w pełny sprzęt metody pilates. Odkryłam również, że ogromną radość sprawia mi dzielenie się wiedzą i nauczanie innych. Tak właśnie powstała ta przestrzeń — miejsce, w którym doświadczycie klasycznego pilatesu w jego czystej, pierwotnej formie.</p>
+          <p>Jako certyfikowana instruktorka stawiam na indywidualne podejście<br>&nbsp;i bezpieczeństwo. Każdy trening dopasowuję do Twoich potrzeb – tak, aby pilates wspierał Twoją siłę, elastyczność i dobre samopoczucie.</p>
           <div class="about-actions">
             <a class="btn btn-primary" href="#oferta">Zobacz ofertę</a>
             <a class="btn btn-ghost" href="https://app.fitssey.com/PilateSpot" data-booking>Umów zajęcia</a>
@@ -121,25 +126,33 @@
             <img src="assets/images/class-mat.jpg" alt="Sesje na macie (Matwork)" loading="lazy">
             <div class="card-body">
               <h2>Sesje na macie (Matwork)</h2>
-              <p>Zajęcia klasycznego pilatesu na macie (matwork) koncentrują się na wzmacnianiu mięśni głębokich centrum, poprawie postawy i pracy z oddechem. Grupy bardzo kameralne – maksymalnie 4 osoby, co pozwala instruktorowi zadbać o technikę każdego uczestnika.</p>
+              <p>Zajęcia klasycznego pilatesu na macie (matwork) koncentrują się na wzmacnianiu mięśni głębokich Twojego gorsetu mięśniowego (core), poprawie postawy i pracy z oddechem. Grupy bardzo kameralne – maksymalnie 4 osoby, co pozwala instruktorowi zadbać o technikę każdego uczestnika.</p>
               <h3>Mata & wieża (Tower)</h3>
               <p>Połączenie matwork z pracą na wieży (tower) dla większego urozmaicenia, oporu, rozciągania i stabilizacji.</p>
               <h3>Mata & mały sprzęt (Small Equipment)</h3>
-              <p>Magic circle, gumy, piłki czy roller zwiększają wyzwanie, angażują więcej mięśni i urozmaicają trening.</p>
+              <p>Foot corrector, magic circle, gumy, piłki czy roller zwiększają wyzwanie, angażują więcej mięśni i urozmaicają trening.</p>
+              <h3>Korektor kręgosłupa (Spine Corrector)</h3>
+              <p>Zajęcia łączące klasyczny matwork z pracą na spine correctorze. Pokazują, jak wiele ćwiczeń z maty można przenieść na ten sprzęt, by pogłębić zakres ruchu, wzmocnić centrum i odkryć zupełnie nowe odczucia w ciele. Inne wrażenia niż na macie – gwarantowane.</p>
+              
+              <p>Posiadamy sprzęty takie jak Ped-o-Pull, Foot Corrector i Wunda Chair, które wykorzystujemy, aby urozmaicić sesje grupowe.</p>
+              <p>Więcej pracy z tym sprzętem oferujemy podczas sesji indywidualnych, gdzie możemy w pełni skupić się na Twoich potrzebach i precyzji ruchu.<br>W przyszłości planujemy również zajęcia grupowe na Wunda Chair.</p>
             </div>
           </article>
           <article class="card">
             <img src="assets/images/class-duet.jpg" alt="Sesje personalne i duo – sprzęt pilatesowy" loading="lazy">
             <div class="card-body">
-              <h2>Sesje personalne i duo – sprzęt pilatesowy</h2>
-              <p>Sesje personalne (1:1) oraz zajęcia duo (2 osoby) to najlepsza forma do poznania&nbsp;pełnego&nbsp;potencjału klasycznego pilatesu na sprzętach. W ramach tych sesji pracujemy na:</p>
+              <h2>Sesje personalne<br>&nbsp;i duo</h2>
+              <p>Sesje personalne (1:1) oraz zajęcia duo<br>&nbsp;(2 osoby – przyjdź z przyjacielem, partnerem lub kimś, z kim lubisz ćwiczyć) to najlepsza forma, by poznać pełny potencjał klasycznego pilatesu na sprzętach.<br>W ramach tych sesji pracujemy na:</p>
               <h3>Reformer</h3>
-              <p>Dynamiczne ćwiczenia z regulowanym oporem, angażujące całe ciało.</p>
+              <p>Płynność ruchu, praca z oporem sprężyn, stabilizacja. Angażujemy całe ciało.</p>
               <h3>Cadillac (Trapeze Table)</h3>
-              <p>Praca nad stabilnością, elastycznością<br> i odciążeniem.</p>
-              <h3>Beczka (Barrel / Ladder Barrel) oraz krzesło (Wunda Chair / Pilates Chair)</h3>
-              <p>Mobilność, równowaga i wzmocnienie mięśni głębokich.</p>
-              <p>Każda sesja jest dostosowana do Twoich celów, stanu ciała i poziomu zaawansowania.</p>
+              <p>Cudowny sprzęt, dający wiele możliwości. Odciążamy ciało, rozluźniamy, wydłużamy kręgosłup. Spróbuj pompki na Cadillacu - gwarantuje, że polubisz.</p>
+              <h3>Beczka (Barrel / Ladder Barrel)</h3>
+              <p>Dzięki niej lepiej zrozumiesz i poczujesz rolowanie kręgosłupa. Twoje ciało się rozciągnie, a teaser na beczce nabierze nowego znaczenia — naprawdę warto spróbować.</p>
+              <h3>Krzesło (Wunda Chair / Pilates Chair)</h3>
+              <p>Krzesełko zweryfikuje Twoje słabe i mocne strony. Jeśli chcesz popracować nad siłą, koniecznie spróbuj sesji na krześle.</p>
+              <p>Dodatkowo wykorzystujemy: spine corrector, ped-o-pul oraz foot corrector<br>– dla jeszcze bardziej precyzyjnej pracy, równowagi i świadomości ciała.</p>
+              <p>Każda sesja jest dostosowana do Twoich celów i poziomu zaawansowania.</p>
             </div>
           </article>
           <article class="card">
@@ -147,12 +160,14 @@
             <div class="card-body">
               <h2>Zajęcia grupowe na sprzęcie</h2>
               <h3>Mata & wieża (Tower)</h3>
-              <p>Grupy do 4 osób.</p>
+              <p>Grupy do 3 osób.</p>
               <h3>Mata & mały sprzęt</h3>
               <p>Grupy do 4 osób.</p>
               <h3>Reformer Start</h3>
               <p>Grupa maksymalnie do 3 osób, idealna dla osób, które chcą zacząć ćwiczyć na reformerze.</p>
               <p>Dzięki małym grupom instruktor może skupić się na technice, zapewnić bezpieczeństwo i indywidualne wskazówki.</p>
+              <h3>W przyszłości</h3>
+              <p>– Reformer średniozaawansowany<br>– Wunda Chair / krzesełko od podstaw<br>– Spine Corrector & mata</p>
             </div>
           </article>
         </div>
@@ -189,15 +204,16 @@
           </div>
           <div class="feature">
             <h3>Sprzęt i akcesoria</h3>
-            <p>W PilateSpot korzystamy z profesjonalnego sprzętu pilatesowego: Reformer, Cadillac, Wunda Chair (krzesełko), Spine Corrector, Ladder Barrel (beczka) oraz z akcesoriów – piłek, rollerów, foot correctora. Dzięki temu możesz doświadczyć pełnej metody pilates i&nbsp;zrozumieć system stworzony przez Josepha Pilatesa.</p>
+            <p>W PilateSpot korzystamy z profesjonalnego sprzętu pilatesowego: Reformer, Cadillac, Wunda Chair (krzesełko), Spine Corrector, Ladder Barrel (beczka), Tower oraz Ped-o-Pul, a także z akcesoriów – piłek, rollerów i foot correctora.
+              Dzięki temu możesz doświadczyć pełnej metody pilates i zrozumieć system stworzony przez Josepha Pilatesa.</p>
           </div>
         </div>
 
         <div class="gallery" style="margin-top:16px">
-          <img src="assets/images/01245e06-1b6e-4981-8f41-41c3be8650b5.jpg" alt="Wnętrze studia — sala do ćwiczeń" loading="lazy">
-          <img src="assets/images/hero.jpg" alt="Przestrzeń studia — minimalistyczny wystrój" loading="lazy">
-          <img src="assets/images/class-mat.jpg" alt="Zajęcia na macie w kameralnej atmosferze" loading="lazy">
-          <img src="assets/images/class-11.jpg" alt="Trening personalny — stanowisko 1:1" loading="lazy">
+          <img src="assets/images/studio1.jpg" alt="Wnętrze studia — sala do ćwiczeń" loading="lazy">
+          <img src="assets/images/studio2.jpg" alt="Przestrzeń studia — minimalistyczny wystrój" loading="lazy">
+          <img src="assets/images/studio3.jpg" alt="Zajęcia na macie w kameralnej atmosferze" loading="lazy">
+          <img src="assets/images/studio4.jpg" alt="Trening personalny — stanowisko 1:1" loading="lazy">
         </div>
 
         <!-- Full-bleed banner 16:9 with overlay -->
@@ -211,6 +227,40 @@
             <a class="btn btn-primary" href="https://app.fitssey.com/PilateSpot" data-booking>Umów zajęcia</a>
           </div>
         </section>
+      </div>
+    </section>
+
+    <!-- MYŚLI -->
+    <section class="section thoughts full-bleed" aria-labelledby="thoughts-title">
+      <div class="thoughts-background">
+        <img src="assets/images/hero.jpg" alt="Pilates - uważny ruch" loading="lazy">
+        <div class="thoughts-overlay">
+          <div class="container">
+            <div class="thoughts-cards" id="thoughts-cards">
+              <article class="thought-card">
+                <h3>Przestrzeń, w której możesz odetchnąć</h3>
+                <p>PilateSpot to miejsce, w którym zwalniasz tempo i pozwalasz sobie być obecnym. Po zajęciach można usiąść z herbatą, porozmawiać lub po prostu pobyć — bez pośpiechu i bez oczekiwań. Tworzę atmosferę życzliwości i spokoju, w której każdy czuje się swobodnie, niezależnie od doświadczenia czy formy dnia.</p>
+              </article>
+              
+              <article class="thought-card">
+                <h3>Uważny ruch, mądra praktyka</h3>
+                <p>Nie dążymy do perfekcji w formie, ale do zrozumienia własnego ciała. Każde spotkanie na macie to rozmowa — z oddechem, napięciem, możliwościami. W pracy kierujemy się uważnością, precyzją i szacunkiem do indywidualnych potrzeb, wierząc, że prawdziwa siła rodzi się z harmonii, a nie z presji.</p>
+              </article>
+              
+              <article class="thought-card">
+                <h3>Ciało, które uczy<br>i prowadzi</h3>
+                <p>Wierzę, że ciało to nie narzędzie, ale przewodnik. Każdy ruch to szansa, by lepiej je poznać i zrozumieć. Z czasem pojawia się lekkość, stabilność i świadomość — efekty, które wykraczają daleko poza matę.</p>
+              </article>
+            </div>
+            
+            <!-- Wskaźniki przewijania -->
+            <div class="thoughts-indicators">
+              <span class="indicator active" data-slide="0"></span>
+              <span class="indicator" data-slide="1"></span>
+              <span class="indicator" data-slide="2"></span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -235,7 +285,7 @@
                 <dd><strong class="price">800 zł</strong></dd>
               </div>
             </dl>
-            <p class="pricing-info">Czas trwania zajęć: 55 min • Ważny przez 30 dni od daty zakupu.</p>
+            <p class="pricing-info">Czas trwania zajęć: 55 min •&nbsp;Ważny przez 30 dni od<br>daty zakupu.</p>
             <div class="pricing-actions">
               <a class="btn btn-primary" href="https://app.fitssey.com/PilateSpot" data-booking>Umów zajęcia</a>
               <a class="btn btn-ghost" href="#kontakt">Pytania?</a>
@@ -257,7 +307,7 @@
                 <dd><strong class="price">1250 zł</strong></dd>
               </div>
             </dl>
-            <p class="pricing-info">Czas trwania zajęć: 55 min • Ważny przez 30 dni od daty zakupu.</p>
+            <p class="pricing-info">Czas trwania zajęć: 55 min •&nbsp;Ważny przez 30 dni od<br>daty zakupu.</p>
             <div class="pricing-actions">
               <a class="btn btn-primary" href="https://app.fitssey.com/PilateSpot" data-booking>Umów zajęcia</a>
               <a class="btn btn-ghost" href="#kontakt">Pytania?</a>
@@ -282,7 +332,7 @@
                 <dd><strong class="price">630 zł</strong></dd>
               </div>
             </dl>
-            <p class="pricing-info">Czas trwania zajęć: 55 min • Ważny przez 30 dni od daty zakupu.</p>
+            <p class="pricing-info">Czas trwania zajęć: 55 min •&nbsp;Ważny przez 30 dni od<br>daty zakupu.</p>
             <div class="pricing-actions">
               <a class="btn btn-primary" href="https://app.fitssey.com/PilateSpot" data-booking>Umów zajęcia</a>
               <a class="btn btn-ghost" href="#kontakt">Pytania?</a>
@@ -305,18 +355,41 @@
           </ul>
           <h3 style="margin-top:16px">Adres</h3>
           <p class="section-intro">al. Wojska Polskiego 187/7, Szczecin</p>
+          <p class="section-intro">Znajdujemy się na zielonym Pogodnie, tuż przy węźle Łękno. To doskonale skomunikowane miejsce — łatwy dojazd zarówno samochodem, jak i komunikacją miejską z każdej części miasta.</p>
           
           <div class="directions">
             <div class="direction-item">
-              <div class="direction-icon">🚗</div>
+              <div class="direction-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Side-view car with larger body and smaller wheels -->
+                  <!-- Base body (taller and longer) -->
+                  <rect x="3" y="12" width="18" height="5" rx="1.4" fill="currentColor"/>
+                  <!-- Roof + cabin (higher) -->
+                  <polygon points="8,12 9.6,8.8 15.4,8.8 17,12" fill="currentColor"/>
+                  <!-- Window cut-out (bigger) -->
+                  <rect x="10.1" y="9.4" width="4.8" height="2" rx="0.5" fill="var(--bg)"/>
+                  <!-- Wheels (smaller) -->
+                  <circle cx="7.8" cy="18.2" r="1.6" fill="currentColor"/>
+                  <circle cx="16.6" cy="18.2" r="1.6" fill="currentColor"/>
+                  <!-- Wheel hubs -->
+                  <circle cx="7.8" cy="18.2" r="0.7" fill="var(--bg)"/>
+                  <circle cx="16.6" cy="18.2" r="0.7" fill="var(--bg)"/>
+                </svg>
+              </div>
               <div class="direction-content">
                 <h4>Dojazd autem:</h4>
-                <p>Wjazd od ul. Prusa, następnie w prawo w ul. Kochanowskiego i prosto do końca. Wejście znajduje się w trzecim budynku od strony ul. Kochanowskiego, II piętro.</p>
+                <p>Wjazd od ul. Prusa, następnie w prawo w ul. Kochanowskiego i prosto do końca. Wejście znajduje się w czwartym budynku od strony ul. Kochanowskiego, II piętro.</p>
               </div>
             </div>
             
             <div class="direction-item">
-              <div class="direction-icon">🚶‍♀️</div>
+              <div class="direction-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="4.5" r="2" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M9.5 21l2.2-4.2m3.8 4.2l-2-4m-5.5-3.2l3-2.6 2.2.9 2.5 2.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M10.5 12.2l1-2.7c.3-.8 1.2-1.2 2-.9l1.9.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
               <div class="direction-content">
                 <h4>Dojście pieszo:</h4>
                 <p>Wejście dostępne także bezpośrednio od al. Wojska Polskiego. Studio znajduje się w pierwszym budynku od strony al. Wojska Polskiego na II piętrze.</p>
