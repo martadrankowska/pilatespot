@@ -414,7 +414,15 @@
             <span>Wiadomość</span>
             <textarea name="message" rows="6" placeholder="Napisz kilka słów..." required></textarea>
           </label>
-          <button type="submit" class="btn btn-primary">Wyślij</button>
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <button type="submit" class="btn btn-primary">Wyślij</button>
+            <div class="form-spinner" aria-hidden="true" style="display: none;">
+              <svg class="spinner-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-dasharray="60" stroke-dashoffset="0" opacity="0.2"></circle>
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-dasharray="60" stroke-dashoffset="0"></circle>
+              </svg>
+            </div>
+          </div>
           <p class="form-note" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -454,7 +462,7 @@
     ▲
   </button>
 
-  <script src="script.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
 

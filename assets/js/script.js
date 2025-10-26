@@ -100,19 +100,130 @@ document.addEventListener('DOMContentLoaded',()=>{
   if(form){
     form.addEventListener('submit',(e)=>{
       e.preventDefault();
-      const data=new FormData(form);
-      const name=(data.get('name')||'').toString().trim();
-      const email=(data.get('email')||'').toString().trim();
-      const message=(data.get('message')||'').toString().trim();
-      if(!name||!email||!message){
-        note.textContent='Proszę wypełnić wszystkie pola.';
+      
+      // Pobierz dane z formularza - spróbuj dwie metody
+      const nameInput = form.querySelector('input[name="name"]');
+      const emailInput = form.querySelector('input[name="email"]');
+      const messageInput = form.querySelector('textarea[name="message"]');
+      
+      const name = (nameInput?.value || '').trim();
+      const email = (emailInput?.value || '').trim();
+      const message = (messageInput?.value || '').trim();
+      
+      // Debug - zobacz w konsoli co się pobiera
+      
+      // Walidacja
+      if(!name || name.length < 2){
+        note.textContent='Imię musi mieć co najmniej 2 znaki.';
         note.style.color='#b00020';
         return;
       }
-      // Placeholder success state. Integrate with backend or form service later.
-      form.reset();
-      note.textContent='Dziękujemy! Wiadomość została wysłana.';
-      note.style.color=getComputedStyle(document.documentElement).getPropertyValue('--accent')||'#2f614d';
+      
+      if(!email || !email.includes('@')){
+        note.textContent='Podaj prawidłowy adres email.';
+        note.style.color='#b00020';
+        return;
+      }
+      
+      if(!message || message.length < 10){
+        note.textContent='Wiadomość musi mieć co najmniej 10 znaków.';
+        note.style.color='#b00020';
+        return;
+      }
+      
+      // Wszystko OK - przygotuj dane do wysłania
+      const data = new FormData();
+      data.append('name', name);
+      data.append('email', email);
+      data.append('message', message);
+      
+      // Wysłanie formularza do send_mail.php
+      const submitBtn = form.querySelector('button[type="submit"]');
+      
+      const spinner = form.querySelector('.form-spinner');
+      
+      if (!submitBtn) {
+        note.textContent = 'Błąd: Przycisk nie znaleziony!';
+        note.style.color = '#b00020';
+        return;
+      }
+      
+      const originalBtnText = submitBtn.textContent;
+      
+      // Disable button i pokaż loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Wysyłam...';
+      if(spinner) spinner.style.display = 'flex';
+      note.textContent = '';
+      
+      // Zmień na pełną ścieżkę absolutną
+      const fetchUrl = window.location.origin + '/send_mail.php';
+      
+      // Użyj zwykłego obiektu zamiast FormData
+      const postData = {
+        name: name,
+        email: email,
+        message: message
+      };
+      
+      fetch(fetchUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(postData),
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        
+        const result = data;
+        
+        // Sukces
+        if (result.success) {
+          form.reset();
+          note.textContent = result.message || 'Dziękujemy! Wiadomość została wysłana.';
+          note.style.color = getComputedStyle(document.documentElement).getPropertyValue('--accent') || '#2f614d';
+        } else {
+          throw new Error(result.message || 'Coś poszło nie tak.');
+        }
+      })
+      .catch(error => {
+        // Błąd
+        
+        let errorMessage = 'Coś poszło nie tak. Spróbuj ponownie później.';
+        
+        if (error.response) {
+          // Odpowiedź z serwera, ale ze statusem błędu
+          
+          // Loguj szczegóły błędów walidacji
+          if (error.response.data?.errors && Array.isArray(error.response.data.errors)) {
+            error.response.data.errors.forEach((err, idx) => {
+            });
+          }
+          
+          errorMessage = error.response.data?.message || `HTTP ${error.response.status}`;
+        } else if (error.request) {
+          // Request wysłany, ale brak odpowiedzi
+          errorMessage = 'Brak odpowiedzi z serwera. Sprawdź połączenie internetowe.';
+        } else if (error.message) {
+          // Inny błąd
+          errorMessage = error.message;
+        }
+        
+        note.textContent = errorMessage;
+        note.style.color = '#b00020';
+      })
+      .finally(() => {
+        // Przywróć przycisk do stanu normalnego
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+        if(spinner) spinner.style.display = 'none';
+      });
     });
   }
 
@@ -162,19 +273,25 @@ document.addEventListener('DOMContentLoaded',()=>{
   // Cookie consent
   try{
     const COOKIE_KEY='pilatespot_cookie_accepted';
-    const COOKIE_PERSISTENCE_ENABLED=false; // tymczasowo wyłączone zapisywanie zgody
+    const COOKIE_PERSISTENCE_ENABLED=true; // ✅ WŁĄCZONE - teraz będzie pamiętać
     const bar=document.getElementById('cookie-consent');
     const btn=document.getElementById('cookie-accept');
     const accepted=localStorage.getItem(COOKIE_KEY)==='1';
     if(bar){
-      if(!accepted){
+      // Jeśli użytkownik już zaakceptował, ukryj pasek
+      if(accepted){
+        bar.hidden=true;
+      } else {
+        // Jeśli nie zaakceptował, pokaż pasek
         bar.hidden=false;
       }
       if(btn){
         btn.addEventListener('click',()=>{
+          // Zapisz zgodę do localStorage
           if(COOKIE_PERSISTENCE_ENABLED){
             try{localStorage.setItem(COOKIE_KEY,'1');}catch(_e){}
           }
+          // Ukryj pasek ciasteczek
           bar.hidden=true;
         });
       }
@@ -300,6 +417,3 @@ document.addEventListener('DOMContentLoaded',()=>{
     }
   }
 });
-
-
-

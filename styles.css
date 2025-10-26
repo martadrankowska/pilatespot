@@ -485,3 +485,24 @@ html,body{overflow-x:hidden !important;max-width:100vw !important}
 .font-default{font-family:'Source Sans Pro',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
 .font-default h1,.font-default h2,.font-default h3,.font-default h4,.font-default h5,.font-default h6{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:600}
 .font-default .eyebrow{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:600}
+
+/* Spinner animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.spinner-icon {
+  animation: spin 1s linear infinite;
+}

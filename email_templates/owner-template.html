@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nowa wiadomość — PilateSpot</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #2f614d;
+            padding-bottom: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            color: #2f614d;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .alert-badge {
+            display: inline-block;
+            background-color: #e8f5e9;
+            border-left: 4px solid #2f614d;
+            padding: 12px 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #1b5e20;
+        }
+        .sender-info {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            border-left: 4px solid #2f614d;
+        }
+        .sender-info h3 {
+            margin: 0 0 12px 0;
+            color: #2c2c2c;
+            font-size: 16px;
+        }
+        .sender-info p {
+            margin: 8px 0;
+            color: #555;
+        }
+        .sender-info strong {
+            color: #2f614d;
+        }
+        .message-section {
+            margin-bottom: 25px;
+        }
+        .message-section h3 {
+            color: #2f614d;
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 12px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 8px;
+        }
+        .message-content {
+            background-color: #fafafa;
+            padding: 15px;
+            border-left: 4px solid #2f614d;
+            border-radius: 4px;
+            color: #555;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.6;
+        }
+        .meta-info {
+            background-color: #f0f0f0;
+            padding: 12px 15px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+            justify-content: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: opacity 0.3s ease;
+        }
+        .btn-reply {
+            background-color: #2f614d;
+            color: white;
+        }
+        .btn-reply:hover {
+            opacity: 0.9;
+        }
+        .btn-secondary {
+            background-color: #e0e0e0;
+            color: #2c2c2c;
+        }
+        .btn-secondary:hover {
+            opacity: 0.9;
+        }
+        .footer {
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 20px;
+            margin-top: 30px;
+            color: #888;
+            font-size: 12px;
+        }
+        .footer p {
+            margin: 6px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>📧 Nowa wiadomość</h1>
+        </div>
+
+        <!-- Alert -->
+        <div class="alert-badge">
+            ✓ Nowy kontakt z formularza — {date}
+        </div>
+
+        <!-- Sender Information -->
+        <div class="sender-info">
+            <h3>Informacje o nadawcy</h3>
+            <p><strong>Imię:</strong> {name}</p>
+            <p><strong>Email:</strong> <a href="mailto:{email}" style="color: #2f614d; text-decoration: none;">{email}</a></p>
+        </div>
+
+        <!-- Message -->
+        <div class="message-section">
+            <h3>Treść wiadomości</h3>
+            <div class="message-content">{message}</div>
+        </div>
+
+        <!-- Actions -->
+        <div class="action-buttons">
+            <a href="mailto:{email}" class="btn btn-reply">↩ Odpowiedz emailem</a>
+            <a href="tel:+48539979799" class="btn btn-secondary">📞 Zadzwoń</a>
+        </div>
+
+        <!-- Meta Information -->
+        <div class="meta-info">
+            <p><strong>Odebrany:</strong> {date}</p>
+            <p style="margin-top: 8px;">Zareaguj na tę wiadomość, aby klient wiedział, że się zainteresowałeś/aś.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>PilateSpot</strong> — System powiadomień o formularzach kontaktu</p>
+            <p>© 2025 PilateSpot. Wszystkie prawa zastrzeżone.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+# Ochrona plików konfiguracyjnych
+<FilesMatch "^config\.php$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Ochrona szablonów emaili — nie powinny być dostępne bezpośrednio
+<Files "email_templates">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Ochrona folderu PHPMailer
+<Files "PHPMailer">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# HTTPS redirect + usuń www.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Usuń www i wymusz HTTPS
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+    
+    # Wymusz HTTPS (jeśli nie www)
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
