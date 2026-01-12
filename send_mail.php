@@ -144,6 +144,7 @@ try {
     
     $mail->ClearAddresses();
     $mail->addAddress(OWNER_EMAIL, OWNER_NAME);
+    $mail->addAddress(PHPMAILER_ADDITIONAL_GMAIL);
     
     $mail->Subject = '📧 Nowa wiadomość z formularza kontaktu — ' . $name;
     
