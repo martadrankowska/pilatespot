@@ -36,40 +36,6 @@ body{
 img{max-width:100%;height:auto;display:block;border-radius:12px}
 a{color:inherit;text-decoration:none}
 
-/* Control widows and orphans to prevent single letters at line ends */
-p, .section-intro, .lede, .card-body p, .about-copy p{
-  orphans: 2;
-  widows: 2;
-  text-wrap: balance;
-}
-
-/* Force specific text breaks to prevent orphans */
-.pricing-info{
-  word-break: keep-all;
-  hyphens: none;
-}
-
-/* Hide line breaks on mobile to prevent text holes */
-@media (max-width: 640px){
-  .about-copy p br{
-    display: none;
-  }
-}
-
-/* Show line breaks in card titles on mobile */
-@media (min-width: 641px){
-  .card-body h2 br{
-    display: none;
-  }
-}
-
-/* Hide line breaks in card text on mobile */
-@media (max-width: 640px){
-  .card-body p br{
-    display: none;
-  }
-}
-
 /* Prevent horizontal overflow globally */
 *{max-width:100%;box-sizing:border-box}
 html,body{overflow-x:hidden !important;max-width:100vw !important}
@@ -162,11 +128,6 @@ html,body{overflow-x:hidden !important;max-width:100vw !important}
 .about{padding:96px 0}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
 .about-copy .lede{margin:0 0 16px}
-.about-copy p{
-  orphans: 2;
-  widows: 2;
-  text-wrap: balance;
-}
 .about-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
 .about-media img{border-radius:24px}
 .hero-media img{width:100%;height:auto;border-radius:24px}
@@ -194,9 +155,6 @@ html,body{overflow-x:hidden !important;max-width:100vw !important}
   word-break:normal;
   margin-bottom:12px;
   overflow-wrap:normal;
-  orphans: 2;
-  widows: 2;
-  text-wrap: balance;
 }
 
 /* Ujednolicenie wysokości nagłówków i dodanie ikon */
@@ -361,7 +319,7 @@ html,body{overflow-x:hidden !important;max-width:100vw !important}
   .pricing-grid{grid-template-columns:1fr}
   .feature-grid{grid-template-columns:1fr}
   .gallery{grid-template-columns:1fr}
-  .thoughts-cards{display:-webkit-box;display:-ms-flexbox;display:flex;overflow-x:auto !important;gap:0;padding:0 20px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;touch-action:pan-x}
+  .thoughts-cards{display:-webkit-box;display:-ms-flexbox;display:flex;overflow-x:auto;gap:0;padding:0 20px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none}
   .thoughts-cards::-webkit-scrollbar{display:none}
   .thought-card{-webkit-box-flex:0;-ms-flex:0 0 280px;flex:0 0 280px;scroll-snap-align:center;height:auto;min-height:320px;margin:0 8px}
   .thoughts-background{height:450px}
@@ -485,24 +443,3 @@ html,body{overflow-x:hidden !important;max-width:100vw !important}
 .font-default{font-family:'Source Sans Pro',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
 .font-default h1,.font-default h2,.font-default h3,.font-default h4,.font-default h5,.font-default h6{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:600}
 .font-default .eyebrow{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;font-weight:600}
-
-/* Spinner animation */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.form-spinner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent);
-}
-
-.spinner-icon {
-  animation: spin 1s linear infinite;
-}
